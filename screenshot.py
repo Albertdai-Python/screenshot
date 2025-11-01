@@ -9,7 +9,7 @@ class screenshot:
         a=Tk()
         a.geometry("400x200")
         a.title("Screenshot")
-        a['background']='#856ff8'
+        # a['background']='#856ff8'
         def choose():
             dirr= filedialog.askdirectory()
             lbl_dir.config(text=dirr)
@@ -28,14 +28,14 @@ class screenshot:
                     pyautogui.screenshot().save(f'{ndirr}/{i}.png')
                     time.sleep(sec)
             pyautogui.screenshot().save(f'{ndirr}/{times-1}.png')
-        lbl_times=Label(a,text="TIMES").grid(row=0,column=0)
+        lbl_times=Label(a,text="Number of Screenshots").grid(row=0,column=0)
         ent_times=Entry(a)
         ent_times.grid(row=1,column=0)
-        lbl_sec=Label(a,text="Secs in between").grid(row=2,column=0)
+        lbl_sec=Label(a,text="Seconds in between").grid(row=2,column=0)
         ent_sec=Entry(a)
         ent_sec.grid(row=3,column=0)
-        lbl_place=Label(a,text="Place").grid(row=0,column=1)
-        btn_place=Button(a,text="Choose",command=choose)
+        lbl_place=Label(a,text="Location").grid(row=0,column=1)
+        btn_place=Button(a,text="Choose File Location",command=choose)
         btn_place.grid(row=1,column=1)
         lbl_timer=Label(a,text="Timer").grid(row=2,column=1)
         ent_timer=Entry(a)
